@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import postRoute from "./routes/posts.js";
 
 // require=>>
 dotenv.config();
@@ -24,3 +25,8 @@ mongoose
     app.listen(PORT, () => console.log(`Server is Running on Port: ${PORT}`))
   )
   .catch((error) => console.log(error.message));
+
+//
+//
+// Route===>
+app.use("/post", postRoute);
