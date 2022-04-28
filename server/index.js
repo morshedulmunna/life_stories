@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import postRoute from "./routes/posts.js";
+import postRoute from "./Routes/posts.js";
 
 // require=>>
 dotenv.config();
@@ -29,4 +29,4 @@ mongoose
 //
 //
 // Route===>
-app.use("/post", postRoute);
+app.use("/posts", postRoute);
