@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
-function App() {
+import { getPost } from "./actions/posts";
+import Posts from "./components/Posts/Posts";
+
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPost());
+  }, [dispatch]);
+
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <div>
+      <Posts />
+    </div>
   );
-}
+};
 
 export default App;
